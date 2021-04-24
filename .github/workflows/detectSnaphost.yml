@@ -1,0 +1,16 @@
+name: "Detect snapshot"
+
+on:
+    pull_request:
+        branches: [ master, stable-* ]
+    push:
+        branches: [ master, stable-* ]
+
+jobs:
+    detekt:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Detect SNAPSHOT
+                run: scripts/analysis/detectSNAPSHOT.sh

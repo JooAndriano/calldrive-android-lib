@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    google()
+    jcenter()
+}
+
+dependencies {
+    implementation project(':')
+}
+
+android {
+    compileSdkVersion 28
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+    }
+}
